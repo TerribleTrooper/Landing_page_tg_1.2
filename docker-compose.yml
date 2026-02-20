@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:15
+    container_name: ii_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ii_user
+      POSTGRES_PASSWORD: ii_pass
+      POSTGRES_DB: ii_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: ii_backend
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://ii_user:ii_pass@db:5432/ii_db
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: nginx:alpine
+    container_name: ii_frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+      - ./frontend/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    restart: always
+
+volumes:
+  postgres_data:
+

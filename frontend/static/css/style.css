@@ -1,0 +1,363 @@
+/* ================= TYPOGRAPHY UPGRADE ================= */
+
+h2 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* ================= CARD TEXT FIX ================= */
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  font-weight: 650;
+  font-size: 18px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.card {
+  gap: 10px;
+}
+
+/* ================= PROBLEMS + TARGET BALANCE ================= */
+
+.grid-3 .card {
+  min-height: 110px;
+}
+
+/* ================= CHAT TEXT IMPROVEMENT ================= */
+
+.chat-box p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #d5d5d5;
+}
+
+/* ================= HERO PARAGRAPH FIX ================= */
+
+section p:first-of-type {
+  font-weight: 400;
+  font-size: 19px;
+  margin-top: 20px;
+}
+
+/* ================= ROOT ================= */
+
+:root {
+  --green: #32ff88;
+}
+
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background:
+
+    radial-gradient(circle at 15% 15%, rgba(50,255,136,0.12), transparent 40%),
+
+    radial-gradient(circle at 80% 30%, rgba(50,255,136,0.08), transparent 45%),
+
+    radial-gradient(circle at 85% 85%, rgba(50,255,136,0.10), transparent 45%),
+
+    linear-gradient(180deg, #050505, #0c0c0c);
+
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 110px 20px;
+}
+
+/* ================= TEXT ================= */
+
+h1,h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(42px,6vw,68px);
+  background: linear-gradient(90deg,#ffffff,#b6ffe2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: clamp(30px,4vw,42px);
+  margin-bottom: 60px;
+}
+
+p {
+  color: #aaa;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+  display: grid;
+  gap: 35px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ================= PREMIUM CARDS ================= */
+
+.card {
+  position: relative;
+  padding: 36px;
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.015));
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(24px);
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: all .4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: var(--green);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.7),
+    0 0 35px rgba(50,255,136,0.2);
+}
+
+/* ================= CHAT WINDOW ================= */
+
+.chat-box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 70px;
+  border-radius: 36px;
+  background:
+    linear-gradient(180deg,
+    rgba(15,15,15,0.95),
+    rgba(5,5,5,0.95));
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(28px);
+  box-shadow:
+    0 50px 100px rgba(0,0,0,0.8),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.chat-box::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at top right,
+    rgba(50,255,136,0.12),
+    transparent 60%);
+  pointer-events:none;
+}
+
+/* ================= CHAT ================= */
+
+.chat {
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.msg {
+  max-width:75%;
+  padding:16px 22px;
+  border-radius:24px;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.user {
+  background: linear-gradient(135deg,#32ff88,#1edc6a);
+  color:#000;
+  align-self:flex-end;
+  box-shadow:0 12px 30px rgba(50,255,136,.35);
+}
+
+.bot {
+  background: rgba(255,255,255,.06);
+  color:#fff;
+  align-self:flex-start;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+/* ================= FORM ================= */
+
+.form {
+  max-width: 520px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  background: #080808;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+
+  resize: vertical;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  appearance: none;
+-webkit-appearance: none;
+
+}
+
+textarea {
+  min-height: 90px;
+  max-height: 160px;
+}
+
+
+input:focus,textarea:focus {
+  outline:none;
+  border-color:var(--green);
+}
+
+button {
+  background:linear-gradient(135deg,#32ff88,#1edc6a);
+  color:#000;
+  padding:16px 40px;
+  border-radius:16px;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  box-shadow:0 15px 35px rgba(50,255,136,.4);
+}
+
+button:hover {
+  transform:translateY(-3px);
+}
+
+footer {
+  text-align:center;
+  padding:60px 20px;
+  color:#666;
+}
+
+  /* ================= AUTOFILL FIX ================= */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+
+  -webkit-text-fill-color: #fff;
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0px 1000px #080808 inset !important;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ================= BACKGROUND GLOW (GREEN ONLY) ================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(50,255,136,0.18), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(50,255,136,0.14), transparent 45%),
+    radial-gradient(circle at 70% 80%, rgba(50,255,136,0.16), transparent 50%);
+
+  filter: blur(70px);
+}
+
+
+/* ================= FLOATING ORBS (GREEN ONLY) ================= */
+
+.bg-orb {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  z-index: -3;
+  animation: float 22s infinite linear;
+}
+
+.orb-green-1 {
+  background: rgba(50,255,136,0.6);
+  top: 10%;
+  left: 5%;
+}
+
+.orb-green-2 {
+  background: rgba(50,255,136,0.5);
+  bottom: 15%;
+  right: 10%;
+}
+
+.orb-green-3 {
+  background: rgba(50,255,136,0.4);
+  top: 60%;
+  right: 25%;
+}
+
+
+  /* ================= CHAT TEXT BOLD ================= */
+
+.chat-box p {
+  font-weight: 600;
+}
+
+.msg {
+  font-weight: 550;
+}
